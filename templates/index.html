@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Peptide AMP/non-AMP Classifier</title>
+</head>
+<body style="font-family: 'Montserrat', sans-serif;text-align:center;">
+    <h1 style="text-align:center;font-family:Helvetica;color:#000000;background-color:#63b8ee;">Peptide AMP/non-AMP Classifier</h1>
+
+    <p style="font-family: 'Montserrat', sans-serif;text-align:center;">Enter a peptide sequence</p>
+    <form action="/calculate" method="post">
+        <!--<label for="input_string">Enter a string:</label>-->
+        <input type="text" id="input_string" name="input_string" required style="align:center;">
+        <!--<textarea id="input_string" name="input_string" rows="4" cols="50"></textarea>-->
+        <button type="submit"  style="box-shadow:inset 0px 1px 0px 0px #bee2f9;
+	background:linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
+	background-color:#63b8ee;
+	border-radius:6px;
+	border:1px solid #3866a3;
+	display:inline-block;
+	cursor:pointer;
+	color:#14396a;
+	font-family:'Montserrat', sans-serif;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #7cacde;">Predict</button>
+    </form>
+    {% if length is not none %}
+        <h2 style="font-family: 'Montserrat', sans-serif;">"{{ input_string }}" is: {{ label }}</h2>
+        <style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0; margin-left: auto;
+  margin-right: auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <td class="tg-0lax">{{ input_string }}</td>
+    <td class="tg-0lax">{{ label }}</td>
+  </tr></thead>
+</table>
+
+    {% endif %}
+
+<p style="font-family: 'Montserrat', sans-serif;text-align:center;">Please cite: <a href="https://doi.org/10.3389/fmolb.2023.1238509">https://doi.org/10.3389/fmolb.2023.1238509</a>
+</p>
+</body>
+</html>
